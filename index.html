@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outils multifonction</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Outils multifonction</h1>
+            <p>Dashboard personnel</p>
+        </header>
+
+        <main>
+            <!-- Météo -->
+            <section id="weatherSection" class="card animated-card">
+                <h2><span>🌤</span> Recherche Météo</h2>
+                <div class="input-group">
+                    <input type="text" id="city" placeholder="Entrez une ville">
+                    <button id="getWeather" class="primary-btn">Obtenir la météo</button>
+                </div>
+                <div id="weatherResult"></div>
+            </section>
+
+            <!-- Todo List -->
+            <section id="todoSection" class="card animated-card">
+                <h2><span>📝</span> To do List</h2>
+                <div class="input-group">
+                    <input type="text" id="newTodo" placeholder="Nouvelle tâche">
+                    <button id="addTodo" class="primary-btn">Ajouter</button>
+                </div>
+                <ul id="todoList" class="scrollable-list"></ul>
+            </section>
+
+            <!-- Bloc Note -->
+            <section id="noteSection" class="card animated-card">
+                <h2><span>🗒️</span> Bloc Notes</h2>
+                <div class="input-group">
+                    <input type="text" id="noteTitle" placeholder="Titre de la note">
+                    <textarea id="noteContent" placeholder="Contenu de la note"></textarea>
+                    <button id="saveNote" class="primary-btn">Sauvegarder</button>
+                </div>
+                <ul id="notesList" class="scrollable-list"></ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>2024 Matthieu Labille. Tous droits réservés.</p>
+        </footer>
+    </div>
+</body>
+</html>
