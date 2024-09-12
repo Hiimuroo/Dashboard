@@ -12,8 +12,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
     color: #e0e0e0;
 }
 
@@ -25,8 +23,9 @@ body {
     padding: 40px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     position: relative;
-    overflow: hidden;
+    min-height: 100%;
 }
+
 
 /* Header */
 header {
@@ -53,7 +52,7 @@ p {
 /* Main layout */
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -65,6 +64,10 @@ main {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     opacity: 0;
     transform: translateY(50px);
+}
+
+#noteSection {
+    grid-column: span 2;
 }
 
 .card:hover {
@@ -212,6 +215,22 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+button.delete-all-btn {
+    background: #ff4c4c;
+    color: white;
+    padding: 12px 24px;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+button.delete-all-btn:hover {
+    background: #ff1c1c;
 }
 
 /* -------------------- MEDIA QUERIES -------------------- */

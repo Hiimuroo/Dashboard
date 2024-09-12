@@ -1,5 +1,5 @@
 // --------------------- FONCTIONNALITÉ MÉTÉO ---------------------
-document.getElementById('getWeather').addEventListener('click', function() {
+document.getElementById('getWeather').addEventListener('click', function () {
     const city = document.getElementById('city').value.trim();
     const apiKey = 'd3f10e6696f6e48c6a3d77ccd26aebc7'; // Assure-toi que c'est ta clé API valide
 
@@ -8,7 +8,7 @@ document.getElementById('getWeather').addEventListener('click', function() {
         return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`;
 
     fetch(url)
         .then(response => {
@@ -17,11 +17,13 @@ document.getElementById('getWeather').addEventListener('click', function() {
             return response.json();
         })
         .then(data => {
-            console.log(data);  // Ajouté pour voir les données renvoyées par l'API
+            console.log(data);  // Voir les données renvoyées par l'API
+
+            // Création du bloc HTML pour afficher la météo avec l'icône
             const weatherInfo = `
                 <h3>${data.name}, ${data.sys.country}</h3>
-                <p>Température: ${data.main.temp}°C</p>
-                <p>Météo: ${data.weather[0].description}</p>
+                <p>Température : ${data.main.temp}°C</p>
+                <p>Météo : ${data.weather[0].description}</p>
             `;
             document.getElementById('weatherResult').innerHTML = weatherInfo;
         })
@@ -30,6 +32,8 @@ document.getElementById('getWeather').addEventListener('click', function() {
             console.error('Erreur :', error);
         });
 });
+
+
 
 
 // --------------------- FONCTIONNALITÉ TODO LIST ---------------------
@@ -67,6 +71,13 @@ function deleteTodo(index) {
 // Affichage initial de la Todo List
 displayTodos();
 
+// Supprimer toutes les tâches
+document.getElementById('clearTodos').addEventListener('click', function() {
+    todos = [];  // On vide le tableau
+    localStorage.setItem('todos', JSON.stringify(todos));  // On met à jour le localStorage
+    displayTodos();  // On réaffiche la liste vide
+});
+
 // --------------------- FONCTIONNALITÉ BLOC NOTE ---------------------
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
@@ -100,6 +111,14 @@ function deleteNote(index) {
     localStorage.setItem('notes', JSON.stringify(notes));
     displayNotes();
 }
+
+// Supprimer toutes les notes
+document.getElementById('clearNotes').addEventListener('click', function() {
+    notes = [];  // On vide le tableau
+    localStorage.setItem('notes', JSON.stringify(notes));  // On met à jour le localStorage
+    displayNotes();  // On réaffiche la liste vide
+});
+
 
 // Affichage initial des notes
 displayNotes();

@@ -15,6 +15,19 @@
         </header>
 
         <main>
+            <!-- Bloc Note -->
+            <section id="noteSection" class="card note-card animated-card">
+                <h2><span>🗒️</span> Bloc Notes</h2>
+                <div class="input-group">
+                    <input type="text" id="noteTitle" placeholder="Titre de la note">
+                    <textarea id="noteContent" placeholder="Contenu de la note"></textarea>
+                    <button id="saveNote" class="primary-btn">Sauvegarder</button>
+                    <button id="clearNotes" class="primary-btn delete-all-btn">Supprimer tout</button>
+                </div>
+                <ul id="notesList" class="scrollable-list"></ul>
+            </section>
+            
+
             <!-- Météo -->
             <section id="weatherSection" class="card animated-card">
                 <h2><span>🌤</span> Recherche Météo</h2>
@@ -31,19 +44,10 @@
                 <div class="input-group">
                     <input type="text" id="newTodo" placeholder="Nouvelle tâche">
                     <button id="addTodo" class="primary-btn">Ajouter</button>
+                    <button id="clearTodos" class="primary-btn delete-all-btn">Supprimer tout</button>
+
                 </div>
                 <ul id="todoList" class="scrollable-list"></ul>
-            </section>
-
-            <!-- Bloc Note -->
-            <section id="noteSection" class="card animated-card">
-                <h2><span>🗒️</span> Bloc Notes</h2>
-                <div class="input-group">
-                    <input type="text" id="noteTitle" placeholder="Titre de la note">
-                    <textarea id="noteContent" placeholder="Contenu de la note"></textarea>
-                    <button id="saveNote" class="primary-btn">Sauvegarder</button>
-                </div>
-                <ul id="notesList" class="scrollable-list"></ul>
             </section>
         </main>
 
