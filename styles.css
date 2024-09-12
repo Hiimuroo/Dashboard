@@ -8,25 +8,27 @@
 
 /* Global styles */
 body {
-    background: radial-gradient(circle, #eef2f3, #d6d8dc);
+    background: linear-gradient(135deg, #121212, #1e1e1e);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    color: #e0e0e0;
 }
 
 .wrapper {
-    width: 85%;
+    width: 100%;
     max-width: 1200px;
-    background: #ffffff;
+    background: #1c1c1c;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     position: relative;
     overflow: hidden;
 }
 
+/* Header */
 header {
     text-align: center;
     margin-bottom: 50px;
@@ -34,7 +36,7 @@ header {
 
 h1 {
     font-size: 4rem;
-    color: #3a3b3f;
+    color: #f0f0f0;
     font-weight: 900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -43,22 +45,23 @@ h1 {
 
 p {
     font-size: 1.2rem;
-    color: #777;
+    color: #b3b3b3;
     margin-top: 10px;
     animation: fadeIn 2s ease-in forwards;
 }
 
+/* Main layout */
 main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .card {
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background: linear-gradient(135deg, #2a2a2a, #3c3c3c);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     opacity: 0;
     transform: translateY(50px);
@@ -66,7 +69,7 @@ main {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
 }
 
 .animated-card {
@@ -75,7 +78,7 @@ main {
 
 .card h2 {
     font-size: 2rem;
-    color: #2f4f4f;
+    color: #e0e0e0;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -84,8 +87,10 @@ main {
 .card h2 span {
     font-size: 2.5rem;
     margin-right: 10px;
+    color: #ffcc00;
 }
 
+/* Form elements */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -96,15 +101,16 @@ main {
 input[type="text"], textarea {
     padding: 15px;
     border-radius: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid #333;
     font-size: 1.1rem;
-    background: #f9f9f9;
+    background: #2d2d2d;
+    color: #f5f5f5;
     transition: all 0.3s ease;
 }
 
 input[type="text"]:focus, textarea:focus {
-    border-color: #007BFF;
-    background: #eaf6ff;
+    border-color: #ffcc00;
+    background: #333;
 }
 
 textarea {
@@ -113,8 +119,8 @@ textarea {
 
 button.primary-btn {
     padding: 12px 24px;
-    background: #007BFF;
-    color: #fff;
+    background: #ffcc00;
+    color: #000;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -123,19 +129,19 @@ button.primary-btn {
 }
 
 button.primary-btn:hover {
-    background: #0056b3;
+    background: #e6b800;
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(255, 204, 0, 0.4);
 }
 
 /* Scrollable lists */
 .scrollable-list {
     max-height: 200px;
     overflow-y: auto;
-    background: #fff;
+    background: #2d2d2d;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 ul {
@@ -144,13 +150,14 @@ ul {
 }
 
 ul li {
-    background-color: #eef2f3;
+    background-color: #3a3a3a;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #e0e0e0;
 }
 
 ul li button {
