@@ -49,6 +49,19 @@
                 </div>
                 <ul id="todoList" class="scrollable-list"></ul>
             </section>
+
+            <!-- Section de Conversion de Devises -->
+            <section id="currencySection" class="card animated-card">
+            <h2><span>💱</span> Convertisseur de Devises</h2>
+            <div class="input-group">
+                <input type="number" id="amount" placeholder="Montant">
+                <input type="text" id="fromCurrency" placeholder="De (ex: EUR)">
+                <input type="text" id="toCurrency" placeholder="Vers (ex: USD)">
+                <button id="convertCurrency" class="primary-btn">Convertir</button>
+            </div>
+            <div id="conversionResult"></div>
+            </section>
+
         </main>
 
         <footer>

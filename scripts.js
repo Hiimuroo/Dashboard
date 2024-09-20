@@ -122,3 +122,34 @@ document.getElementById('clearNotes').addEventListener('click', function() {
 
 // Affichage initial des notes
 displayNotes();
+
+// --------------------- FONCTIONNALITÉ CONVERTISSEUR DE DEVISES ---------------------
+document.getElementById('convertCurrency').addEventListener('click', function () {
+    const amount = document.getElementById('amount').value.trim();
+    const fromCurrency = document.getElementById('fromCurrency').value.trim().toUpperCase();
+    const toCurrency = document.getElementById('toCurrency').value.trim().toUpperCase();
+    const apiKey = 'bb26147e0d95777d202e9745';
+
+    if (!amount || !fromCurrency || !toCurrency) {
+        document.getElementById('conversionResult').innerHTML = '<p>Veuillez remplir tous les champs.</p>';
+        return;
+    }
+
+    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}/${amount}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error('Problème avec la conversion');
+            return response.json();
+        })
+        .then(data => {
+            const conversionInfo = `
+                <p>${amount} ${fromCurrency} équivaut à ${data.conversion_result.toFixed(2)} ${toCurrency}</p>
+            `;
+            document.getElementById('conversionResult').innerHTML = conversionInfo;
+        })
+        .catch(error => {
+            document.getElementById('conversionResult').innerHTML = `<p>Erreur: ${error.message}</p>`;
+            console.error('Erreur :', error);
+        });
+});
